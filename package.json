@@ -1,0 +1,29 @@
+{
+  "name": "mutantdiscover",
+  "version": "1.0.0",
+  "description": "Servidor utilizado apra saber si un humano es mutante mediante su ADN",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nachgrandi/mutantDiscover.git"
+  },
+  "author": "IgnacioGrandi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nachgrandi/mutantDiscover/issues"
+  },
+  "homepage": "https://github.com/nachgrandi/mutantDiscover#readme",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "express": "^4.17.1",
+    "nyc": "^15.1.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "mocha": "^8.2.1"
+  }
+}
