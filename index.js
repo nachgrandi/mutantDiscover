@@ -19,7 +19,15 @@ app.post('/mutant/', (req, res) => {
 
 app.get('/stats/', (req, res) => {
     bbdd.select().then(rows => {
-        ratio = rows[0].mutantes / rows[0].humanos
+        var mutantes = 1
+        if (rows[0].mutantes > 0) {
+            mutantes = rows[0].mutantes
+        }
+        var humanos = 1
+        if (rows[0].humanos > 0) {
+            humanos = rows[0].humanos
+        }
+        ratio = mutantes / humanos
         ret = {
             count_mutant_dna : rows[0].mutantes, 
             count_human_dna : rows[0].humanos,

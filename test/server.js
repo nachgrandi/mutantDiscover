@@ -8,12 +8,6 @@ chai.should();
 
 mutant = [{
     "dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
-},{
-    "dna":["AAAAGA","CAGTCC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
-},{
-    "dna":["ATGCGA","ACGTGC","ATATGT","AGAAGG","ACCCTA","TCACTG"]
-},{
-    "dna":["ACGCGA","CACGGC","TTACGT","AGAACC","ACCCTA","TCACTG"]
 }]
 
 notMutant = {
