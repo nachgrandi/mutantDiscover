@@ -3,6 +3,7 @@ var express = require('express')
 var http = require('http').createServer(app);
 
 var functions = require('./src/functions')
+var bbdd = require('./src/bbdd')
 
 
 app.use(express.json())
@@ -16,6 +17,27 @@ app.post('/mutant/', (req, res) => {
     res.end()
 })
 
-http.listen(4000, () =>{
-    console.log('Listen on 4000')
+app.get('/stats/', (req, res) => {
+    bbdd.select().then(rows => {
+        ratio = rows[0].mutantes / rows[0].humanos
+        ret = {
+            count_mutant_dna : rows[0].mutantes, 
+            count_human_dna : rows[0].humanos,
+            ratio : ratio
+        }
+        res.json(ret)
+        res.end()
+    })
+})
+
+app.get('/', (req, res) => {
+    res.status(200).send('Hello, world!').end();
+})
+
+exports.app = app;
+
+const PORT = process.env.PORT || 4000
+http.listen(PORT, () =>{
+    console.log('Listen on ', PORT)
+
 })

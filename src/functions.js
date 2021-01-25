@@ -1,21 +1,28 @@
 const largoCadena = 3;
+var bbdd = require('./bbdd')
 
 exports.isMutant = function (req){
     var dna = req.dna
     var cadenaMutante = 0
     cadenaMutante = vertical(dna)
     if (cadenaMutante > 1) {
+        bbdd.insert(dna, 1)
         return true;
     }
     cadenaMutante += horizontal(dna)
     if (cadenaMutante > 1) {
+        bbdd.insert(dna, 1)
         return true;
     }
     cadenaMutante += diagonal(dna)
     if (cadenaMutante > 1) {
+        bbdd.insert(dna, 1)
         return true;
+
+    }else{
+        bbdd.insert(dna, 0)
+        return false
     }
-    return false
 }
 
 function horizontal(dna){
