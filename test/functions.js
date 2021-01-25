@@ -1,7 +1,7 @@
 var expect    = require("chai").expect;
 var func = require('../src/functions')
 
-mutant = [{
+var mutant = [{
     "dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
 },{
     "dna":["AAAAGA","CAGTCC","TTATGT","AGAAGG","CCCCTA","TCACTG"]
@@ -11,7 +11,7 @@ mutant = [{
     "dna":["ACGCGA","CACGGC","TTACGT","AGAACC","ACCCTA","TCACTG"]
 }]
 
-notMutant = {
+var notMutant = {
     "dna":["CTGCAA","CAGTGC","TTATGT","AGAAGG","CGCCTA","TCACTG"]
 }
 
